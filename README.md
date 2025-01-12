@@ -146,6 +146,3 @@ This is the First Version of tool. Below are few planned future updates :
     1. Bulk Validation of IOCs
     2. Tools supporting Red Team Exercises.
 
-## Author
-
-[Akash Chaitanya Yadav](https://github.com/akashyadav1507)
