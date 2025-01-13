@@ -77,6 +77,12 @@ This project is a simple packet sniffer built using Python and Scapy. It allows 
 - Test your packet sniffer on your local network or on a test network.
 - Capture packets from different types of traffic (e.g., HTTP, FTP, etc.) and ensure that your packet sniffer is correctly filtering and displaying the relevant information.
 
+To test the packet sniffer:
+- Run the script on a local network and verify that it captures traffic from different devices.
+- Capture packets from different types of traffic (e.g., HTTP, FTP, DNS) and ensure that your packet sniffer is correctly filtering and displaying the relevant information.
+- Use tools like [Wireshark](https://www.wireshark.org/) to compare and ensure the accuracy of the captured packets.
+
+
 ## 10. Document the Project
 - In the README file, document:
     - How to run the project.
