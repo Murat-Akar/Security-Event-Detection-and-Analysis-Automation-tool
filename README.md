@@ -22,9 +22,6 @@ This project is a simple packet sniffer built using Python and Scapy. It allows 
     - Python (optional): You can use Python with libraries like scapy for custom packet sniffing scripts.
     - Scapy: A Python library that allows you to send, receive, and analyze network packets.
 
-To install Scapy, you can use: 
-- pip install scapy
-
 ## 2. Understand the concepts of packet sniffing
 - Packet Sniffer: It’s a tool that captures network traffic (packets) from a network interface, which can then be analyzed for various data like IP addresses, protocol types, ports, etc.
 - Packet Structure: You will need to understand the basic structure of network packets, including headers like Ethernet, IP, TCP/UDP, etc.
@@ -35,10 +32,12 @@ To install Scapy, you can use:
 
 ## 4. Implement Packet Sniffer using Python and Scapy
 - Import the necessary libraries:
-    - "from scapy.all import sniff"
+    ```bash
+    "from scapy.all import sniff"
 - Write a function to capture packets:
-    - def packet_callback(packet):
-      - print(packet.show())  # This will print the packet's details
+    ```bash
+    def packet_callback(packet):
+      print(packet.show())  # This will print the packet's details
 
     - # Sniff packets from a specific interface (e.g., eth0 for Linux)
     - sniff(iface="eth0", prn=packet_callback, store=0)
@@ -51,21 +50,24 @@ To install Scapy, you can use:
 
 ## 5. Filter packets based on certain criteria
 - You may want to capture specific types of traffic, such as HTTP or TCP packets. You can use filters for this.
-    - sniff(filter="tcp port 80", prn=packet_callback, store=0)
+    ```bash
+    sniff(filter="tcp port 80", prn=packet_callback, store=0)
 
 ## 6. Save captured data to a file
 - You might want to save the captured packets to a file for further analysis:
-    - def packet_callback(packet):
-        - with open("packets.txt", "a") as f:
-            - f.write(str(packet) + "\n")
+    ```bash
+    def packet_callback(packet):
+      with open("packets.txt", "a") as f:
+        f.write(str(packet) + "\n")
 
 ## 7. Analyze captured packets
 - Analyze the captured packets to extract useful information like source/destination IP, packet length, protocols, etc. This step can be enhanced by writing additional functions to parse the packet data:
-    - def analyze_packet(packet):
-        - if packet.haslayer(IP):
-            - print(f"Source IP: {packet[IP].src} -> Destination IP: {packet[IP].dst}")
-        - if packet.haslayer(TCP):
-            - print(f"TCP Packet: {packet[TCP].sport} -> {packet[TCP].dport}")
+    ```bash
+    def analyze_packet(packet):
+        if packet.haslayer(IP):
+            print(f"Source IP: {packet[IP].src} -> Destination IP: {packet[IP].dst}")
+        if packet.haslayer(TCP):
+            print(f"TCP Packet: {packet[TCP].sport} -> {packet[TCP].dport}")
         
 ## 8. Enhance the Packet Sniffer
 - Add additional functionality to capture specific types of packets like HTTP, DNS requests, etc.
